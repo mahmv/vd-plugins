@@ -19,9 +19,11 @@ jobs:
                   node-version: "18.12"
 
             - run: npm install --global pnpm
-            - name: Install bun
-              run: curl -fsSL https://bun.sh/install | bash
+            - uses: oven-sh/setup-bun@v1
+              with:
+               bun-version: 'latest'
 
+            
             - name: Install deps
               run: bun install
 
